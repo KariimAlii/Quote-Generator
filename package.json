@@ -1,0 +1,22 @@
+{
+  "name": "quote-generator",
+  "version": "1.0.0",
+  "description": "a random quote generator that gives you the ability to post the quote on your twitter account!",
+  "main": "./script/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KariimAlii/Quote-Generator.git"
+  },
+  "author": "Karim Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KariimAlii/Quote-Generator/issues"
+  },
+  "homepage": "https://github.com/KariimAlii/Quote-Generator#readme",
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}

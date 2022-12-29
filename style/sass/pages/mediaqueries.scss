@@ -1,0 +1,12 @@
+@use "../variables.scss" as *;
+
+//========= Media Queries ==========//
+@media screen and (max-width:1000px) {
+    .quote-container {
+        margin: auto 1rem;
+        .quote-text {
+            font-size: 4rem;
+        }
+    }
+    
+}
