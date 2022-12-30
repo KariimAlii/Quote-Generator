@@ -1,4 +1,14 @@
 @use "../variables.scss" as *;
+
+%centered-flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
 .quote-container {
     width:auto;
     max-width: 90rem;
@@ -12,15 +22,32 @@
             font-size: 6.4rem;
         }
         // #quote {}
+        .fa-up-right-from-square {
+            font-size: 2rem;
+            margin-left: 2rem;
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-0.3rem);
+            }
+            transition: all 0.3s;
+        }
     }
     .quote-author {
+        @extend %centered-flex-box;
         margin-top: 15px;
         font: {
             size:3.2rem;
             weight:400;
             style:italic;
         }
-        // #author {}
+        .fa-address-card {
+            margin-left:2rem;
+            &:hover {
+                cursor: pointer;
+                transform: translateY(-0.3rem);
+            }
+            transition: all 0.3s;
+        }
     }
     .button-container {
         margin-top:1.5rem;
@@ -38,17 +65,15 @@
             outline:none;
             padding:2rem 2.5rem;
             box-shadow: 0 0.3rem $button-box-shadow;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @extend %centered-flex-box;
             &:hover {
                 filter :brightness(110%);
             }
             &:active {
                 transform: translate(0,0.4rem);
                 box-shadow: 0 0.5rem rgba(255,255,255,0.65);
-                transition: all 0.3s;
             }
+            transition: transform 0.3s;
         }
         .twitter-button {
             padding: 1rem;
@@ -61,10 +86,33 @@
                 }
             }
         }
-        // #new-quote {}
     }
 }
 
 .long-quote {
     font-size: 3.2rem;
+}
+
+@keyframes spin {
+    0% {
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+.loader {
+    background-color: transparent;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    // transform: translateX(-50%);
+    // transform: translateY(-50%);
+    border:1.6rem solid grey;
+    border-top-color:$twitter-color;
+    animation: spin 1.5s linear infinite;
 }

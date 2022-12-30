@@ -26,6 +26,17 @@ body {
   justify-content: center; /* centered horizontally */
 }
 
+.quote-container .button-container button, .quote-container .quote-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .quote-container {
   width: auto;
   max-width: 90rem;
@@ -40,11 +51,28 @@ body {
 .quote-container .quote-text .fa-quote-left {
   font-size: 6.4rem;
 }
+.quote-container .quote-text .fa-up-right-from-square {
+  font-size: 2rem;
+  margin-left: 2rem;
+  transition: all 0.3s;
+}
+.quote-container .quote-text .fa-up-right-from-square:hover {
+  cursor: pointer;
+  transform: translateY(-0.3rem);
+}
 .quote-container .quote-author {
   margin-top: 15px;
   font-size: 3.2rem;
   font-weight: 400;
   font-style: italic;
+}
+.quote-container .quote-author .fa-address-card {
+  margin-left: 2rem;
+  transition: all 0.3s;
+}
+.quote-container .quote-author .fa-address-card:hover {
+  cursor: pointer;
+  transform: translateY(-0.3rem);
 }
 .quote-container .button-container {
   margin-top: 1.5rem;
@@ -63,9 +91,7 @@ body {
   outline: none;
   padding: 2rem 2.5rem;
   box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: transform 0.3s;
 }
 .quote-container .button-container button:hover {
   filter: brightness(110%);
@@ -73,7 +99,6 @@ body {
 .quote-container .button-container button:active {
   transform: translate(0, 0.4rem);
   box-shadow: 0 0.5rem rgba(255, 255, 255, 0.65);
-  transition: all 0.3s;
 }
 .quote-container .button-container .twitter-button {
   padding: 1rem;
@@ -89,6 +114,27 @@ body {
 
 .long-quote {
   font-size: 3.2rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.loader {
+  background-color: transparent;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1.6rem solid grey;
+  border-top-color: #38a1f3;
+  animation: spin 1.5s linear infinite;
 }
 
 @media screen and (max-width: 1000px) {

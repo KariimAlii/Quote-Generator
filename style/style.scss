@@ -1,4 +1,4 @@
-@use "./sass/variables.scss" as *;
-@use "./sass/layout/global-rules";
-@use "./sass/pages/mainpage";
-@use "./sass/pages/mediaqueries.scss";
+@use "./sass/_variables.scss" as *;
+@use "./sass/layout/_global-rules";
+@use "./sass/pages/_mainpage";
+@use "./sass/pages/_mediaqueries";
